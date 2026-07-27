@@ -1,9 +1,16 @@
-with transactions as (
-    select * from {{ ref('stg_transactions') }}
+
+  create or replace   view BARCLAYS_DEV.DBT_MODELS.mart_customer_summary
+  
+  
+  
+  
+  as (
+    with transactions as (
+    select * from BARCLAYS_DEV.DBT_MODELS.stg_transactions
 ),
 
 customers as (
-    select * from {{ ref('stg_customers') }}
+    select * from BARCLAYS_DEV.DBT_MODELS.stg_customers
 )
 
 select
@@ -19,3 +26,5 @@ select
 from customers c
 left join transactions t on c.customer_id = t.customer_id
 group by c.customer_id, c.customer_name, c.segment
+  );
+

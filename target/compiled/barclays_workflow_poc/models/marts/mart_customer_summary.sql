@@ -1,9 +1,9 @@
 with transactions as (
-    select * from {{ ref('stg_transactions') }}
+    select * from BARCLAYS_DEV.DBT_MODELS.stg_transactions
 ),
 
 customers as (
-    select * from {{ ref('stg_customers') }}
+    select * from BARCLAYS_DEV.DBT_MODELS.stg_customers
 )
 
 select

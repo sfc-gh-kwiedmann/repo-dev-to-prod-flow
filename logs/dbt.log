@@ -1,0 +1,782 @@
+
+
+============================== 11:54:30.562404 | a2adb8f3-55ff-464f-9088-5f8aeefae9cb ==============================
+[0m11:54:30.562404 [info ] [Dummy-1   ]: Running with dbt=1.10.15
+[0m11:54:30.563518 [debug] [Dummy-1   ]: running dbt with arguments {'send_anonymous_usage_stats': 'False', 'log_format': 'default', 'partial_parse': 'True', 'indirect_selection': 'eager', 'no_print': 'None', 'target_path': '/tmp/dbt/target/', 'write_json': 'True', 'log_path': '/tmp/dbt/logs', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'quiet': 'False', 'profiles_dir': '/tmp/dbt/', 'use_experimental_parser': 'False', 'use_colors': 'True', 'cache_selected_only': 'False', 'invocation_command': 'dbt ', 'log_cache_events': 'False', 'fail_fast': 'False', 'debug': 'False', 'version_check': 'True', 'introspect': 'True', 'empty': 'False', 'static_parser': 'True'}
+[0m11:54:30.902939 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.10.3
+[0m11:54:31.425202 [debug] [Dummy-1   ]: checksum: 0f45fdd67cc51382d6521f874e757e7afa214ac7bb0178b13f1819cbe813499c, vars: {}, profile: , target: dev, version: 1.10.15
+[0m11:54:31.426966 [info ] [Dummy-1   ]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m11:54:33.673849 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m11:54:33.676710 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m11:54:33.725675 [info ] [Dummy-1   ]: Found 3 models, 2 seeds, 7 data tests, 479 macros
+[0m11:54:33.729220 [info ] [Dummy-1   ]: 
+[0m11:54:33.729903 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m11:54:33.730406 [info ] [Dummy-1   ]: 
+[0m11:54:33.731307 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m11:54:33.740294 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_BARCLAYS_DEV_DBT_MODELS'
+[0m11:54:33.883527 [debug] [ThreadPool]: Using snowflake connection "list_BARCLAYS_DEV_DBT_MODELS"
+[0m11:54:33.884248 [debug] [ThreadPool]: On list_BARCLAYS_DEV_DBT_MODELS: show objects in BARCLAYS_DEV.DBT_MODELS
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "connection_name": "list_BARCLAYS_DEV_DBT_MODELS"} */;
+[0m11:54:33.884781 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:54:35.124956 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 1.240 seconds
+[0m11:54:35.137258 [debug] [Thread-2 (]: Began running node seed.barclays_workflow_poc.raw_customers
+[0m11:54:35.138152 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_BARCLAYS_DEV_DBT_MODELS, now seed.barclays_workflow_poc.raw_customers)
+[0m11:54:35.139001 [debug] [Thread-2 (]: Began compiling node seed.barclays_workflow_poc.raw_customers
+[0m11:54:35.150434 [debug] [Thread-2 (]: Began executing node seed.barclays_workflow_poc.raw_customers
+[0m11:54:35.151691 [debug] [Thread-2 (]: Finished running node seed.barclays_workflow_poc.raw_customers
+[0m11:54:35.152448 [debug] [Thread-2 (]: Began running node seed.barclays_workflow_poc.raw_transactions
+[0m11:54:35.153909 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly seed.barclays_workflow_poc.raw_customers, now seed.barclays_workflow_poc.raw_transactions)
+[0m11:54:35.154546 [debug] [Thread-2 (]: Began compiling node seed.barclays_workflow_poc.raw_transactions
+[0m11:54:35.159169 [debug] [Thread-2 (]: Began executing node seed.barclays_workflow_poc.raw_transactions
+[0m11:54:35.160415 [debug] [Thread-2 (]: Finished running node seed.barclays_workflow_poc.raw_transactions
+[0m11:54:35.161205 [debug] [Thread-2 (]: Began running node model.barclays_workflow_poc.stg_customers
+[0m11:54:35.162383 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly seed.barclays_workflow_poc.raw_transactions, now model.barclays_workflow_poc.stg_customers)
+[0m11:54:35.163058 [debug] [Thread-2 (]: Began compiling node model.barclays_workflow_poc.stg_customers
+[0m11:54:35.169331 [debug] [Thread-2 (]: Writing injected SQL for node "model.barclays_workflow_poc.stg_customers"
+[0m11:54:35.170370 [debug] [Thread-2 (]: Began executing node model.barclays_workflow_poc.stg_customers
+[0m11:54:35.171479 [debug] [Thread-2 (]: Finished running node model.barclays_workflow_poc.stg_customers
+[0m11:54:35.172224 [debug] [Thread-2 (]: Began running node model.barclays_workflow_poc.stg_transactions
+[0m11:54:35.173381 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.barclays_workflow_poc.stg_customers, now model.barclays_workflow_poc.stg_transactions)
+[0m11:54:35.174012 [debug] [Thread-2 (]: Began compiling node model.barclays_workflow_poc.stg_transactions
+[0m11:54:35.180394 [debug] [Thread-2 (]: Writing injected SQL for node "model.barclays_workflow_poc.stg_transactions"
+[0m11:54:35.181319 [debug] [Thread-2 (]: Began executing node model.barclays_workflow_poc.stg_transactions
+[0m11:54:35.182447 [debug] [Thread-2 (]: Finished running node model.barclays_workflow_poc.stg_transactions
+[0m11:54:35.183262 [debug] [Thread-2 (]: Began running node test.barclays_workflow_poc.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m11:54:35.184441 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.barclays_workflow_poc.stg_transactions, now test.barclays_workflow_poc.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m11:54:35.185080 [debug] [Thread-2 (]: Began compiling node test.barclays_workflow_poc.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m11:54:35.207237 [debug] [Thread-2 (]: Writing injected SQL for node "test.barclays_workflow_poc.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m11:54:35.208212 [debug] [Thread-2 (]: Began executing node test.barclays_workflow_poc.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m11:54:35.209500 [debug] [Thread-2 (]: Finished running node test.barclays_workflow_poc.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m11:54:35.210254 [debug] [Thread-2 (]: Began running node test.barclays_workflow_poc.unique_stg_customers_customer_id.c7614daada
+[0m11:54:35.211107 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.barclays_workflow_poc.not_null_stg_customers_customer_id.e2cfb1f9aa, now test.barclays_workflow_poc.unique_stg_customers_customer_id.c7614daada)
+[0m11:54:35.211709 [debug] [Thread-2 (]: Began compiling node test.barclays_workflow_poc.unique_stg_customers_customer_id.c7614daada
+[0m11:54:35.222860 [debug] [Thread-2 (]: Writing injected SQL for node "test.barclays_workflow_poc.unique_stg_customers_customer_id.c7614daada"
+[0m11:54:35.223779 [debug] [Thread-2 (]: Began executing node test.barclays_workflow_poc.unique_stg_customers_customer_id.c7614daada
+[0m11:54:35.224863 [debug] [Thread-2 (]: Finished running node test.barclays_workflow_poc.unique_stg_customers_customer_id.c7614daada
+[0m11:54:35.225621 [debug] [Thread-2 (]: Began running node model.barclays_workflow_poc.mart_customer_summary
+[0m11:54:35.226440 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.barclays_workflow_poc.unique_stg_customers_customer_id.c7614daada, now model.barclays_workflow_poc.mart_customer_summary)
+[0m11:54:35.227082 [debug] [Thread-2 (]: Began compiling node model.barclays_workflow_poc.mart_customer_summary
+[0m11:54:35.233595 [debug] [Thread-2 (]: Writing injected SQL for node "model.barclays_workflow_poc.mart_customer_summary"
+[0m11:54:35.234539 [debug] [Thread-2 (]: Began executing node model.barclays_workflow_poc.mart_customer_summary
+[0m11:54:35.235649 [debug] [Thread-2 (]: Finished running node model.barclays_workflow_poc.mart_customer_summary
+[0m11:54:35.236381 [debug] [Thread-2 (]: Began running node test.barclays_workflow_poc.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m11:54:35.237507 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.barclays_workflow_poc.mart_customer_summary, now test.barclays_workflow_poc.not_null_stg_transactions_transaction_id.1d00a8e2e4)
+[0m11:54:35.238186 [debug] [Thread-2 (]: Began compiling node test.barclays_workflow_poc.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m11:54:35.246229 [debug] [Thread-2 (]: Writing injected SQL for node "test.barclays_workflow_poc.not_null_stg_transactions_transaction_id.1d00a8e2e4"
+[0m11:54:35.247155 [debug] [Thread-2 (]: Began executing node test.barclays_workflow_poc.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m11:54:35.248313 [debug] [Thread-2 (]: Finished running node test.barclays_workflow_poc.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m11:54:35.249083 [debug] [Thread-2 (]: Began running node test.barclays_workflow_poc.unique_stg_transactions_transaction_id.ee9a78a396
+[0m11:54:35.249914 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.barclays_workflow_poc.not_null_stg_transactions_transaction_id.1d00a8e2e4, now test.barclays_workflow_poc.unique_stg_transactions_transaction_id.ee9a78a396)
+[0m11:54:35.250520 [debug] [Thread-2 (]: Began compiling node test.barclays_workflow_poc.unique_stg_transactions_transaction_id.ee9a78a396
+[0m11:54:35.258524 [debug] [Thread-2 (]: Writing injected SQL for node "test.barclays_workflow_poc.unique_stg_transactions_transaction_id.ee9a78a396"
+[0m11:54:35.259472 [debug] [Thread-2 (]: Began executing node test.barclays_workflow_poc.unique_stg_transactions_transaction_id.ee9a78a396
+[0m11:54:35.260529 [debug] [Thread-2 (]: Finished running node test.barclays_workflow_poc.unique_stg_transactions_transaction_id.ee9a78a396
+[0m11:54:35.261247 [debug] [Thread-2 (]: Began running node test.barclays_workflow_poc.not_null_mart_customer_summary_customer_id.fb1cdeac24
+[0m11:54:35.262039 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.barclays_workflow_poc.unique_stg_transactions_transaction_id.ee9a78a396, now test.barclays_workflow_poc.not_null_mart_customer_summary_customer_id.fb1cdeac24)
+[0m11:54:35.262627 [debug] [Thread-2 (]: Began compiling node test.barclays_workflow_poc.not_null_mart_customer_summary_customer_id.fb1cdeac24
+[0m11:54:35.272999 [debug] [Thread-2 (]: Writing injected SQL for node "test.barclays_workflow_poc.not_null_mart_customer_summary_customer_id.fb1cdeac24"
+[0m11:54:35.273926 [debug] [Thread-2 (]: Began executing node test.barclays_workflow_poc.not_null_mart_customer_summary_customer_id.fb1cdeac24
+[0m11:54:35.274988 [debug] [Thread-2 (]: Finished running node test.barclays_workflow_poc.not_null_mart_customer_summary_customer_id.fb1cdeac24
+[0m11:54:35.275719 [debug] [Thread-2 (]: Began running node test.barclays_workflow_poc.not_null_mart_customer_summary_total_amount.c60a1e1677
+[0m11:54:35.276514 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.barclays_workflow_poc.not_null_mart_customer_summary_customer_id.fb1cdeac24, now test.barclays_workflow_poc.not_null_mart_customer_summary_total_amount.c60a1e1677)
+[0m11:54:35.277110 [debug] [Thread-2 (]: Began compiling node test.barclays_workflow_poc.not_null_mart_customer_summary_total_amount.c60a1e1677
+[0m11:54:35.285027 [debug] [Thread-2 (]: Writing injected SQL for node "test.barclays_workflow_poc.not_null_mart_customer_summary_total_amount.c60a1e1677"
+[0m11:54:35.285914 [debug] [Thread-2 (]: Began executing node test.barclays_workflow_poc.not_null_mart_customer_summary_total_amount.c60a1e1677
+[0m11:54:35.286994 [debug] [Thread-2 (]: Finished running node test.barclays_workflow_poc.not_null_mart_customer_summary_total_amount.c60a1e1677
+[0m11:54:35.287718 [debug] [Thread-2 (]: Began running node test.barclays_workflow_poc.unique_mart_customer_summary_customer_id.db2e68c56b
+[0m11:54:35.288623 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.barclays_workflow_poc.not_null_mart_customer_summary_total_amount.c60a1e1677, now test.barclays_workflow_poc.unique_mart_customer_summary_customer_id.db2e68c56b)
+[0m11:54:35.289229 [debug] [Thread-2 (]: Began compiling node test.barclays_workflow_poc.unique_mart_customer_summary_customer_id.db2e68c56b
+[0m11:54:35.297279 [debug] [Thread-2 (]: Writing injected SQL for node "test.barclays_workflow_poc.unique_mart_customer_summary_customer_id.db2e68c56b"
+[0m11:54:35.298169 [debug] [Thread-2 (]: Began executing node test.barclays_workflow_poc.unique_mart_customer_summary_customer_id.db2e68c56b
+[0m11:54:35.299385 [debug] [Thread-2 (]: Finished running node test.barclays_workflow_poc.unique_mart_customer_summary_customer_id.db2e68c56b
+[0m11:54:35.301725 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m11:54:35.302308 [debug] [Dummy-1   ]: Connection 'test.barclays_workflow_poc.unique_mart_customer_summary_customer_id.db2e68c56b' was properly closed.
+[0m11:54:35.305039 [debug] [Dummy-1   ]: Command end result
+[0m11:54:35.528813 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m11:54:35.531536 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m11:54:35.541532 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m11:54:35.543631 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 5.060393, "process_in_blocks": "0", "process_kernel_time": 1.28, "process_mem_max_rss": "453188", "process_out_blocks": "0", "process_user_time": 7.99}
+[0m11:54:35.544443 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 11:54:35.544148 after 5.06 seconds
+[0m11:54:35.545042 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 11:58:57.835819 | e2479bc2-715d-4be4-a11a-5b07f57c89ca ==============================
+[0m11:58:57.835819 [info ] [Dummy-1   ]: Running with dbt=1.10.15
+[0m11:58:57.836757 [debug] [Dummy-1   ]: running dbt with arguments {'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'empty': 'False', 'write_json': 'True', 'profiles_dir': '/tmp/dbt/', 'log_cache_events': 'False', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'send_anonymous_usage_stats': 'False', 'cache_selected_only': 'False', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt ', 'log_format': 'default', 'partial_parse': 'True', 'indirect_selection': 'eager', 'version_check': 'True', 'printer_width': '80', 'static_parser': 'True', 'use_experimental_parser': 'False', 'no_print': 'None'}
+[0m11:58:58.151243 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.10.3
+[0m11:58:58.647101 [debug] [Dummy-1   ]: checksum: 0f45fdd67cc51382d6521f874e757e7afa214ac7bb0178b13f1819cbe813499c, vars: {}, profile: , target: dev, version: 1.10.15
+[0m11:58:58.874786 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m11:58:58.875832 [debug] [Dummy-1   ]: Partial parsing: updated file: barclays_workflow_poc://models/marts/mart_customer_summary.sql
+[0m11:58:59.733174 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m11:58:59.736034 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m11:58:59.782891 [info ] [Dummy-1   ]: Found 3 models, 2 seeds, 7 data tests, 479 macros
+[0m11:58:59.785958 [info ] [Dummy-1   ]: 
+[0m11:58:59.786543 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m11:58:59.787011 [info ] [Dummy-1   ]: 
+[0m11:58:59.787794 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m11:58:59.796219 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_BARCLAYS_DEV_DBT_MODELS'
+[0m11:58:59.941296 [debug] [ThreadPool]: Using snowflake connection "list_BARCLAYS_DEV_DBT_MODELS"
+[0m11:58:59.941988 [debug] [ThreadPool]: On list_BARCLAYS_DEV_DBT_MODELS: show objects in BARCLAYS_DEV.DBT_MODELS
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "connection_name": "list_BARCLAYS_DEV_DBT_MODELS"} */;
+[0m11:58:59.942542 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:59:00.575991 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.633 seconds
+[0m11:59:00.588634 [debug] [Thread-2 (]: Began running node seed.barclays_workflow_poc.raw_customers
+[0m11:59:00.589566 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_BARCLAYS_DEV_DBT_MODELS, now seed.barclays_workflow_poc.raw_customers)
+[0m11:59:00.590257 [debug] [Thread-2 (]: Began compiling node seed.barclays_workflow_poc.raw_customers
+[0m11:59:00.601631 [debug] [Thread-2 (]: Began executing node seed.barclays_workflow_poc.raw_customers
+[0m11:59:00.603095 [debug] [Thread-2 (]: Finished running node seed.barclays_workflow_poc.raw_customers
+[0m11:59:00.603834 [debug] [Thread-2 (]: Began running node seed.barclays_workflow_poc.raw_transactions
+[0m11:59:00.604850 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly seed.barclays_workflow_poc.raw_customers, now seed.barclays_workflow_poc.raw_transactions)
+[0m11:59:00.605450 [debug] [Thread-2 (]: Began compiling node seed.barclays_workflow_poc.raw_transactions
+[0m11:59:00.609991 [debug] [Thread-2 (]: Began executing node seed.barclays_workflow_poc.raw_transactions
+[0m11:59:00.611086 [debug] [Thread-2 (]: Finished running node seed.barclays_workflow_poc.raw_transactions
+[0m11:59:00.611816 [debug] [Thread-2 (]: Began running node model.barclays_workflow_poc.stg_customers
+[0m11:59:00.612892 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly seed.barclays_workflow_poc.raw_transactions, now model.barclays_workflow_poc.stg_customers)
+[0m11:59:00.613590 [debug] [Thread-2 (]: Began compiling node model.barclays_workflow_poc.stg_customers
+[0m11:59:00.619605 [debug] [Thread-2 (]: Writing injected SQL for node "model.barclays_workflow_poc.stg_customers"
+[0m11:59:00.620497 [debug] [Thread-2 (]: Began executing node model.barclays_workflow_poc.stg_customers
+[0m11:59:00.621554 [debug] [Thread-2 (]: Finished running node model.barclays_workflow_poc.stg_customers
+[0m11:59:00.622341 [debug] [Thread-2 (]: Began running node model.barclays_workflow_poc.stg_transactions
+[0m11:59:00.623417 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.barclays_workflow_poc.stg_customers, now model.barclays_workflow_poc.stg_transactions)
+[0m11:59:00.624040 [debug] [Thread-2 (]: Began compiling node model.barclays_workflow_poc.stg_transactions
+[0m11:59:00.629940 [debug] [Thread-2 (]: Writing injected SQL for node "model.barclays_workflow_poc.stg_transactions"
+[0m11:59:00.630873 [debug] [Thread-2 (]: Began executing node model.barclays_workflow_poc.stg_transactions
+[0m11:59:00.631904 [debug] [Thread-2 (]: Finished running node model.barclays_workflow_poc.stg_transactions
+[0m11:59:00.632629 [debug] [Thread-2 (]: Began running node test.barclays_workflow_poc.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m11:59:00.633737 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.barclays_workflow_poc.stg_transactions, now test.barclays_workflow_poc.not_null_stg_customers_customer_id.e2cfb1f9aa)
+[0m11:59:00.634341 [debug] [Thread-2 (]: Began compiling node test.barclays_workflow_poc.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m11:59:00.652280 [debug] [Thread-2 (]: Writing injected SQL for node "test.barclays_workflow_poc.not_null_stg_customers_customer_id.e2cfb1f9aa"
+[0m11:59:00.653180 [debug] [Thread-2 (]: Began executing node test.barclays_workflow_poc.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m11:59:00.654235 [debug] [Thread-2 (]: Finished running node test.barclays_workflow_poc.not_null_stg_customers_customer_id.e2cfb1f9aa
+[0m11:59:00.654954 [debug] [Thread-2 (]: Began running node test.barclays_workflow_poc.unique_stg_customers_customer_id.c7614daada
+[0m11:59:00.655743 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.barclays_workflow_poc.not_null_stg_customers_customer_id.e2cfb1f9aa, now test.barclays_workflow_poc.unique_stg_customers_customer_id.c7614daada)
+[0m11:59:00.656325 [debug] [Thread-2 (]: Began compiling node test.barclays_workflow_poc.unique_stg_customers_customer_id.c7614daada
+[0m11:59:00.669406 [debug] [Thread-2 (]: Writing injected SQL for node "test.barclays_workflow_poc.unique_stg_customers_customer_id.c7614daada"
+[0m11:59:00.670499 [debug] [Thread-2 (]: Began executing node test.barclays_workflow_poc.unique_stg_customers_customer_id.c7614daada
+[0m11:59:00.671540 [debug] [Thread-2 (]: Finished running node test.barclays_workflow_poc.unique_stg_customers_customer_id.c7614daada
+[0m11:59:00.672293 [debug] [Thread-2 (]: Began running node model.barclays_workflow_poc.mart_customer_summary
+[0m11:59:00.673119 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.barclays_workflow_poc.unique_stg_customers_customer_id.c7614daada, now model.barclays_workflow_poc.mart_customer_summary)
+[0m11:59:00.673753 [debug] [Thread-2 (]: Began compiling node model.barclays_workflow_poc.mart_customer_summary
+[0m11:59:00.679969 [debug] [Thread-2 (]: Writing injected SQL for node "model.barclays_workflow_poc.mart_customer_summary"
+[0m11:59:00.680881 [debug] [Thread-2 (]: Began executing node model.barclays_workflow_poc.mart_customer_summary
+[0m11:59:00.681962 [debug] [Thread-2 (]: Finished running node model.barclays_workflow_poc.mart_customer_summary
+[0m11:59:00.682668 [debug] [Thread-2 (]: Began running node test.barclays_workflow_poc.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m11:59:00.683745 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.barclays_workflow_poc.mart_customer_summary, now test.barclays_workflow_poc.not_null_stg_transactions_transaction_id.1d00a8e2e4)
+[0m11:59:00.684357 [debug] [Thread-2 (]: Began compiling node test.barclays_workflow_poc.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m11:59:00.692204 [debug] [Thread-2 (]: Writing injected SQL for node "test.barclays_workflow_poc.not_null_stg_transactions_transaction_id.1d00a8e2e4"
+[0m11:59:00.693095 [debug] [Thread-2 (]: Began executing node test.barclays_workflow_poc.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m11:59:00.694143 [debug] [Thread-2 (]: Finished running node test.barclays_workflow_poc.not_null_stg_transactions_transaction_id.1d00a8e2e4
+[0m11:59:00.695301 [debug] [Thread-2 (]: Began running node test.barclays_workflow_poc.unique_stg_transactions_transaction_id.ee9a78a396
+[0m11:59:00.696034 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.barclays_workflow_poc.not_null_stg_transactions_transaction_id.1d00a8e2e4, now test.barclays_workflow_poc.unique_stg_transactions_transaction_id.ee9a78a396)
+[0m11:59:00.696662 [debug] [Thread-2 (]: Began compiling node test.barclays_workflow_poc.unique_stg_transactions_transaction_id.ee9a78a396
+[0m11:59:00.704662 [debug] [Thread-2 (]: Writing injected SQL for node "test.barclays_workflow_poc.unique_stg_transactions_transaction_id.ee9a78a396"
+[0m11:59:00.705583 [debug] [Thread-2 (]: Began executing node test.barclays_workflow_poc.unique_stg_transactions_transaction_id.ee9a78a396
+[0m11:59:00.706579 [debug] [Thread-2 (]: Finished running node test.barclays_workflow_poc.unique_stg_transactions_transaction_id.ee9a78a396
+[0m11:59:00.707288 [debug] [Thread-2 (]: Began running node test.barclays_workflow_poc.not_null_mart_customer_summary_customer_id.fb1cdeac24
+[0m11:59:00.708001 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.barclays_workflow_poc.unique_stg_transactions_transaction_id.ee9a78a396, now test.barclays_workflow_poc.not_null_mart_customer_summary_customer_id.fb1cdeac24)
+[0m11:59:00.708714 [debug] [Thread-2 (]: Began compiling node test.barclays_workflow_poc.not_null_mart_customer_summary_customer_id.fb1cdeac24
+[0m11:59:00.718597 [debug] [Thread-2 (]: Writing injected SQL for node "test.barclays_workflow_poc.not_null_mart_customer_summary_customer_id.fb1cdeac24"
+[0m11:59:00.719495 [debug] [Thread-2 (]: Began executing node test.barclays_workflow_poc.not_null_mart_customer_summary_customer_id.fb1cdeac24
+[0m11:59:00.720477 [debug] [Thread-2 (]: Finished running node test.barclays_workflow_poc.not_null_mart_customer_summary_customer_id.fb1cdeac24
+[0m11:59:00.721153 [debug] [Thread-2 (]: Began running node test.barclays_workflow_poc.not_null_mart_customer_summary_total_amount.c60a1e1677
+[0m11:59:00.721901 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.barclays_workflow_poc.not_null_mart_customer_summary_customer_id.fb1cdeac24, now test.barclays_workflow_poc.not_null_mart_customer_summary_total_amount.c60a1e1677)
+[0m11:59:00.722464 [debug] [Thread-2 (]: Began compiling node test.barclays_workflow_poc.not_null_mart_customer_summary_total_amount.c60a1e1677
+[0m11:59:00.729865 [debug] [Thread-2 (]: Writing injected SQL for node "test.barclays_workflow_poc.not_null_mart_customer_summary_total_amount.c60a1e1677"
+[0m11:59:00.730722 [debug] [Thread-2 (]: Began executing node test.barclays_workflow_poc.not_null_mart_customer_summary_total_amount.c60a1e1677
+[0m11:59:00.731757 [debug] [Thread-2 (]: Finished running node test.barclays_workflow_poc.not_null_mart_customer_summary_total_amount.c60a1e1677
+[0m11:59:00.732453 [debug] [Thread-2 (]: Began running node test.barclays_workflow_poc.unique_mart_customer_summary_customer_id.db2e68c56b
+[0m11:59:00.733293 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.barclays_workflow_poc.not_null_mart_customer_summary_total_amount.c60a1e1677, now test.barclays_workflow_poc.unique_mart_customer_summary_customer_id.db2e68c56b)
+[0m11:59:00.733963 [debug] [Thread-2 (]: Began compiling node test.barclays_workflow_poc.unique_mart_customer_summary_customer_id.db2e68c56b
+[0m11:59:00.741428 [debug] [Thread-2 (]: Writing injected SQL for node "test.barclays_workflow_poc.unique_mart_customer_summary_customer_id.db2e68c56b"
+[0m11:59:00.742294 [debug] [Thread-2 (]: Began executing node test.barclays_workflow_poc.unique_mart_customer_summary_customer_id.db2e68c56b
+[0m11:59:00.743260 [debug] [Thread-2 (]: Finished running node test.barclays_workflow_poc.unique_mart_customer_summary_customer_id.db2e68c56b
+[0m11:59:00.745481 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m11:59:00.746049 [debug] [Dummy-1   ]: Connection 'test.barclays_workflow_poc.unique_mart_customer_summary_customer_id.db2e68c56b' was properly closed.
+[0m11:59:00.748855 [debug] [Dummy-1   ]: Command end result
+[0m11:59:00.782287 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m11:59:00.784773 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m11:59:00.794603 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m11:59:00.796579 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 3.035146, "process_in_blocks": "0", "process_kernel_time": 1.27, "process_mem_max_rss": "443044", "process_out_blocks": "0", "process_user_time": 6.24}
+[0m11:59:00.797329 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 11:59:00.797052 after 3.04 seconds
+[0m11:59:00.797935 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 11:59:23.360042 | c968e4d3-766d-423d-836b-9376840e5502 ==============================
+[0m11:59:23.360042 [info ] [Dummy-1   ]: Running with dbt=1.10.15
+[0m11:59:23.360993 [debug] [Dummy-1   ]: running dbt with arguments {'fail_fast': 'False', 'empty': 'False', 'no_print': 'None', 'log_path': '/tmp/dbt/logs', 'write_json': 'True', 'debug': 'False', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False', 'log_format': 'default', 'target_path': '/tmp/dbt/target/', 'version_check': 'True', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'log_cache_events': 'False', 'use_colors': 'True', 'warn_error': 'None', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'introspect': 'True', 'invocation_command': 'dbt ', 'printer_width': '80'}
+[0m11:59:23.680156 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.10.3
+[0m11:59:24.181142 [debug] [Dummy-1   ]: checksum: 0f45fdd67cc51382d6521f874e757e7afa214ac7bb0178b13f1819cbe813499c, vars: {}, profile: , target: dev, version: 1.10.15
+[0m11:59:24.397765 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m11:59:24.398491 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m11:59:24.587454 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m11:59:24.590343 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m11:59:24.647041 [info ] [Dummy-1   ]: Found 3 models, 2 seeds, 7 data tests, 479 macros
+[0m11:59:24.649901 [info ] [Dummy-1   ]: 
+[0m11:59:24.650497 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m11:59:24.650946 [info ] [Dummy-1   ]: 
+[0m11:59:24.651767 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m11:59:24.660349 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_BARCLAYS_DEV'
+[0m11:59:24.808647 [debug] [ThreadPool]: Using snowflake connection "list_BARCLAYS_DEV"
+[0m11:59:24.809386 [debug] [ThreadPool]: On list_BARCLAYS_DEV: show terse schemas in database BARCLAYS_DEV
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "connection_name": "list_BARCLAYS_DEV"} */
+[0m11:59:24.809941 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:59:25.303114 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.493 seconds
+[0m11:59:25.308574 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_BARCLAYS_DEV_DBT_MODELS'
+[0m11:59:25.328464 [debug] [ThreadPool]: Using snowflake connection "list_BARCLAYS_DEV_DBT_MODELS"
+[0m11:59:25.329217 [debug] [ThreadPool]: On list_BARCLAYS_DEV_DBT_MODELS: show objects in BARCLAYS_DEV.DBT_MODELS
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "connection_name": "list_BARCLAYS_DEV_DBT_MODELS"} */;
+[0m11:59:25.329773 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:59:25.858725 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.529 seconds
+[0m11:59:25.870723 [debug] [Thread-2 (]: Began running node model.barclays_workflow_poc.stg_customers
+[0m11:59:25.871719 [info ] [Thread-2 (]: 1 of 3 START sql view model DBT_MODELS.stg_customers ........................... [RUN]
+[0m11:59:25.872551 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_BARCLAYS_DEV_DBT_MODELS, now model.barclays_workflow_poc.stg_customers)
+[0m11:59:25.873165 [debug] [Thread-2 (]: Began compiling node model.barclays_workflow_poc.stg_customers
+[0m11:59:25.887118 [debug] [Thread-2 (]: Writing injected SQL for node "model.barclays_workflow_poc.stg_customers"
+[0m11:59:25.888083 [debug] [Thread-2 (]: Began executing node model.barclays_workflow_poc.stg_customers
+[0m11:59:25.948137 [debug] [Thread-2 (]: Writing runtime sql for node "model.barclays_workflow_poc.stg_customers"
+[0m11:59:25.950022 [debug] [Thread-2 (]: Using snowflake connection "model.barclays_workflow_poc.stg_customers"
+[0m11:59:25.950698 [debug] [Thread-2 (]: On model.barclays_workflow_poc.stg_customers: create or replace   view BARCLAYS_DEV.DBT_MODELS.stg_customers
+  
+  
+  
+  
+  as (
+    with source as (
+    select * from BARCLAYS_DEV.DBT_MODELS.raw_customers
+)
+
+select
+    customer_id,
+    customer_name,
+    segment,
+    onboarded_date::date as onboarded_date
+from source
+  )
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "node_id": "model.barclays_workflow_poc.stg_customers"} */;
+[0m11:59:25.951274 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m11:59:26.404903 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01c5fcb3-040b-55cd-0001-4d4e0677fa3e
+[0m11:59:26.405681 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'BARCLAYS_DEV.DBT_MODELS.RAW_CUSTOMERS' does not exist or not authorized.
+[0m11:59:26.411851 [debug] [Thread-2 (]: Database Error in model stg_customers (models/staging/stg_customers.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'BARCLAYS_DEV.DBT_MODELS.RAW_CUSTOMERS' does not exist or not authorized.
+  compiled code at /tmp/dbt/target/run/barclays_workflow_poc/models/staging/stg_customers.sql
+[0m11:59:26.415066 [error] [Thread-2 (]: 1 of 3 ERROR creating sql view model DBT_MODELS.stg_customers .................. [[31mERROR[0m in 0.54s]
+[0m11:59:26.416003 [debug] [Thread-2 (]: Finished running node model.barclays_workflow_poc.stg_customers
+[0m11:59:26.416738 [debug] [Thread-2 (]: Began running node model.barclays_workflow_poc.stg_transactions
+[0m11:59:26.417646 [debug] [Thread-5 (]: Marking all children of 'model.barclays_workflow_poc.stg_customers' to be skipped because of status 'error'.  Reason: Database Error in model stg_customers (models/staging/stg_customers.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'BARCLAYS_DEV.DBT_MODELS.RAW_CUSTOMERS' does not exist or not authorized.
+  compiled code at /tmp/dbt/target/run/barclays_workflow_poc/models/staging/stg_customers.sql.
+[0m11:59:26.418602 [info ] [Thread-2 (]: 2 of 3 START sql view model DBT_MODELS.stg_transactions ........................ [RUN]
+[0m11:59:26.420464 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.barclays_workflow_poc.stg_customers, now model.barclays_workflow_poc.stg_transactions)
+[0m11:59:26.421076 [debug] [Thread-2 (]: Began compiling node model.barclays_workflow_poc.stg_transactions
+[0m11:59:26.427617 [debug] [Thread-2 (]: Writing injected SQL for node "model.barclays_workflow_poc.stg_transactions"
+[0m11:59:26.428640 [debug] [Thread-2 (]: Began executing node model.barclays_workflow_poc.stg_transactions
+[0m11:59:26.434416 [debug] [Thread-2 (]: Writing runtime sql for node "model.barclays_workflow_poc.stg_transactions"
+[0m11:59:26.435985 [debug] [Thread-2 (]: Using snowflake connection "model.barclays_workflow_poc.stg_transactions"
+[0m11:59:26.436638 [debug] [Thread-2 (]: On model.barclays_workflow_poc.stg_transactions: create or replace   view BARCLAYS_DEV.DBT_MODELS.stg_transactions
+  
+  
+  
+  
+  as (
+    with source as (
+    select * from BARCLAYS_DEV.DBT_MODELS.raw_transactions
+)
+
+select
+    transaction_id,
+    customer_id,
+    amount,
+    currency,
+    transaction_date::date as transaction_date,
+    status,
+    current_timestamp() as loaded_at
+from source
+where status != 'failed'
+  )
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "node_id": "model.barclays_workflow_poc.stg_transactions"} */;
+[0m11:59:26.437210 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m11:59:27.538774 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01c5fcb3-040b-55cd-0001-4d4e0677fa5a
+[0m11:59:27.539512 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'BARCLAYS_DEV.DBT_MODELS.RAW_TRANSACTIONS' does not exist or not authorized.
+[0m11:59:27.545033 [debug] [Thread-2 (]: Database Error in model stg_transactions (models/staging/stg_transactions.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'BARCLAYS_DEV.DBT_MODELS.RAW_TRANSACTIONS' does not exist or not authorized.
+  compiled code at /tmp/dbt/target/run/barclays_workflow_poc/models/staging/stg_transactions.sql
+[0m11:59:27.546419 [error] [Thread-2 (]: 2 of 3 ERROR creating sql view model DBT_MODELS.stg_transactions ............... [[31mERROR[0m in 1.13s]
+[0m11:59:27.547320 [debug] [Thread-2 (]: Finished running node model.barclays_workflow_poc.stg_transactions
+[0m11:59:27.548157 [debug] [Thread-5 (]: Marking all children of 'model.barclays_workflow_poc.stg_transactions' to be skipped because of status 'error'.  Reason: Database Error in model stg_transactions (models/staging/stg_transactions.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'BARCLAYS_DEV.DBT_MODELS.RAW_TRANSACTIONS' does not exist or not authorized.
+  compiled code at /tmp/dbt/target/run/barclays_workflow_poc/models/staging/stg_transactions.sql.
+[0m11:59:27.549647 [debug] [Thread-2 (]: Began running node model.barclays_workflow_poc.mart_customer_summary
+[0m11:59:27.550442 [info ] [Thread-2 (]: 3 of 3 SKIP relation DBT_MODELS.mart_customer_summary .......................... [[33mSKIP[0m]
+[0m11:59:27.551071 [debug] [Thread-2 (]: Finished running node model.barclays_workflow_poc.mart_customer_summary
+[0m11:59:27.553592 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m11:59:27.554097 [debug] [Dummy-1   ]: Connection 'list_BARCLAYS_DEV' was properly closed.
+[0m11:59:27.554533 [debug] [Dummy-1   ]: Connection 'model.barclays_workflow_poc.stg_transactions' was properly closed.
+[0m11:59:27.555111 [info ] [Dummy-1   ]: 
+[0m11:59:27.555615 [info ] [Dummy-1   ]: Finished running 3 view models in 0 hours 0 minutes and 2.90 seconds (2.90s).
+[0m11:59:27.556788 [debug] [Dummy-1   ]: Command end result
+[0m11:59:27.718422 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m11:59:27.721226 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m11:59:27.729627 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m11:59:27.730166 [info ] [Dummy-1   ]: 
+[0m11:59:27.730803 [info ] [Dummy-1   ]: [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m
+[0m11:59:27.731299 [info ] [Dummy-1   ]: 
+[0m11:59:27.731942 [error] [Dummy-1   ]: [31mFailure in model stg_customers (models/staging/stg_customers.sql)[0m
+[0m11:59:27.732573 [error] [Dummy-1   ]:   Database Error in model stg_customers (models/staging/stg_customers.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'BARCLAYS_DEV.DBT_MODELS.RAW_CUSTOMERS' does not exist or not authorized.
+  compiled code at /tmp/dbt/target/run/barclays_workflow_poc/models/staging/stg_customers.sql
+[0m11:59:27.733029 [info ] [Dummy-1   ]: 
+[0m11:59:27.733587 [info ] [Dummy-1   ]:   compiled code at /tmp/dbt/target/compiled/barclays_workflow_poc/models/staging/stg_customers.sql
+[0m11:59:27.734051 [info ] [Dummy-1   ]: 
+[0m11:59:27.734642 [error] [Dummy-1   ]: [31mFailure in model stg_transactions (models/staging/stg_transactions.sql)[0m
+[0m11:59:27.735241 [error] [Dummy-1   ]:   Database Error in model stg_transactions (models/staging/stg_transactions.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'BARCLAYS_DEV.DBT_MODELS.RAW_TRANSACTIONS' does not exist or not authorized.
+  compiled code at /tmp/dbt/target/run/barclays_workflow_poc/models/staging/stg_transactions.sql
+[0m11:59:27.735690 [info ] [Dummy-1   ]: 
+[0m11:59:27.736199 [info ] [Dummy-1   ]:   compiled code at /tmp/dbt/target/compiled/barclays_workflow_poc/models/staging/stg_transactions.sql
+[0m11:59:27.736639 [info ] [Dummy-1   ]: 
+[0m11:59:27.737135 [info ] [Dummy-1   ]: Done. PASS=0 WARN=0 ERROR=2 SKIP=1 NO-OP=0 TOTAL=3
+[0m11:59:27.739031 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 4.4544945, "process_in_blocks": "0", "process_kernel_time": 1.14, "process_mem_max_rss": "387444", "process_out_blocks": "0", "process_user_time": 5.77}
+[0m11:59:27.739734 [debug] [Dummy-1   ]: Command `cli run` failed at 11:59:27.739471 after 4.46 seconds
+[0m11:59:27.740290 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 12:01:09.122143 | 9834c2f7-640d-491c-a43b-1f4a3ec84059 ==============================
+[0m12:01:09.122143 [info ] [Dummy-1   ]: Running with dbt=1.10.15
+[0m12:01:09.123147 [debug] [Dummy-1   ]: running dbt with arguments {'log_path': '/tmp/dbt/logs', 'write_json': 'True', 'log_format': 'default', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'quiet': 'False', 'fail_fast': 'False', 'debug': 'False', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'printer_width': '80', 'version_check': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'empty': 'None', 'no_print': 'None', 'target_path': '/tmp/dbt/target/', 'profiles_dir': '/tmp/dbt/', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'False', 'indirect_selection': 'eager', 'invocation_command': 'dbt '}
+[0m12:01:09.445445 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.10.3
+[0m12:01:09.943467 [debug] [Dummy-1   ]: checksum: 0f45fdd67cc51382d6521f874e757e7afa214ac7bb0178b13f1819cbe813499c, vars: {}, profile: , target: dev, version: 1.10.15
+[0m12:01:10.176661 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:01:10.177436 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:01:10.367708 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m12:01:10.370599 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m12:01:10.428921 [info ] [Dummy-1   ]: Found 3 models, 2 seeds, 7 data tests, 479 macros
+[0m12:01:10.431889 [info ] [Dummy-1   ]: 
+[0m12:01:10.432553 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m12:01:10.433091 [info ] [Dummy-1   ]: 
+[0m12:01:10.434025 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m12:01:10.442583 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_BARCLAYS_DEV'
+[0m12:01:10.575930 [debug] [ThreadPool]: Using snowflake connection "list_BARCLAYS_DEV"
+[0m12:01:10.576610 [debug] [ThreadPool]: On list_BARCLAYS_DEV: show terse schemas in database BARCLAYS_DEV
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "connection_name": "list_BARCLAYS_DEV"} */
+[0m12:01:10.577441 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:01:12.141087 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 1.563 seconds
+[0m12:01:12.146729 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_BARCLAYS_DEV_DBT_MODELS'
+[0m12:01:12.167294 [debug] [ThreadPool]: Using snowflake connection "list_BARCLAYS_DEV_DBT_MODELS"
+[0m12:01:12.168013 [debug] [ThreadPool]: On list_BARCLAYS_DEV_DBT_MODELS: show objects in BARCLAYS_DEV.DBT_MODELS
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "connection_name": "list_BARCLAYS_DEV_DBT_MODELS"} */;
+[0m12:01:12.168569 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:01:13.587829 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 1.419 seconds
+[0m12:01:13.599344 [debug] [Thread-2 (]: Began running node seed.barclays_workflow_poc.raw_customers
+[0m12:01:13.600329 [info ] [Thread-2 (]: 1 of 2 START seed file DBT_MODELS.raw_customers ................................ [RUN]
+[0m12:01:13.601173 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_BARCLAYS_DEV_DBT_MODELS, now seed.barclays_workflow_poc.raw_customers)
+[0m12:01:13.601774 [debug] [Thread-2 (]: Began compiling node seed.barclays_workflow_poc.raw_customers
+[0m12:01:13.602374 [debug] [Thread-2 (]: Began executing node seed.barclays_workflow_poc.raw_customers
+[0m12:01:13.653042 [debug] [Thread-2 (]: Using snowflake connection "seed.barclays_workflow_poc.raw_customers"
+[0m12:01:13.653755 [debug] [Thread-2 (]: On seed.barclays_workflow_poc.raw_customers: create table BARCLAYS_DEV.DBT_MODELS.raw_customers (customer_id text,customer_name text,segment text,onboarded_date date)
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "node_id": "seed.barclays_workflow_poc.raw_customers"} */
+[0m12:01:13.654350 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:01:14.599964 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.945 seconds
+[0m12:01:14.620591 [debug] [Thread-2 (]: Using snowflake connection "seed.barclays_workflow_poc.raw_customers"
+[0m12:01:14.621315 [debug] [Thread-2 (]: On seed.barclays_workflow_poc.raw_customers: BEGIN
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "node_id": "seed.barclays_workflow_poc.raw_customers"} */
+[0m12:01:14.719827 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.098 seconds
+[0m12:01:14.721074 [debug] [Thread-2 (]: Using snowflake connection "seed.barclays_workflow_poc.raw_customers"
+[0m12:01:14.721727 [debug] [Thread-2 (]: On seed.barclays_workflow_poc.raw_customers: insert into BARCLAYS_DEV.DBT_MODELS.raw_customers (customer_id, customer_name, segment, onboarded_date) values
+            (%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s)
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "node_id": "seed.barclays_workflow_poc.raw_customers"} */...
+[0m12:01:15.333317 [debug] [Thread-2 (]: SQL status: SUCCESS 4 in 0.611 seconds
+[0m12:01:15.334259 [debug] [Thread-2 (]: Using snowflake connection "seed.barclays_workflow_poc.raw_customers"
+[0m12:01:15.334903 [debug] [Thread-2 (]: On seed.barclays_workflow_poc.raw_customers: COMMIT
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "node_id": "seed.barclays_workflow_poc.raw_customers"} */
+[0m12:01:15.703709 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.368 seconds
+[0m12:01:15.712032 [debug] [Thread-2 (]: Writing runtime SQL for node "seed.barclays_workflow_poc.raw_customers"
+[0m12:01:15.748976 [info ] [Thread-2 (]: 1 of 2 OK loaded seed file DBT_MODELS.raw_customers ............................ [[32mINSERT 4[0m in 2.15s]
+[0m12:01:15.750006 [debug] [Thread-2 (]: Finished running node seed.barclays_workflow_poc.raw_customers
+[0m12:01:15.750789 [debug] [Thread-2 (]: Began running node seed.barclays_workflow_poc.raw_transactions
+[0m12:01:15.751780 [info ] [Thread-2 (]: 2 of 2 START seed file DBT_MODELS.raw_transactions ............................. [RUN]
+[0m12:01:15.752571 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly seed.barclays_workflow_poc.raw_customers, now seed.barclays_workflow_poc.raw_transactions)
+[0m12:01:15.753168 [debug] [Thread-2 (]: Began compiling node seed.barclays_workflow_poc.raw_transactions
+[0m12:01:15.753743 [debug] [Thread-2 (]: Began executing node seed.barclays_workflow_poc.raw_transactions
+[0m12:01:15.762678 [debug] [Thread-2 (]: Using snowflake connection "seed.barclays_workflow_poc.raw_transactions"
+[0m12:01:15.763380 [debug] [Thread-2 (]: On seed.barclays_workflow_poc.raw_transactions: create table BARCLAYS_DEV.DBT_MODELS.raw_transactions (transaction_id text,customer_id text,amount float8,currency text,transaction_date date,status text)
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "node_id": "seed.barclays_workflow_poc.raw_transactions"} */
+[0m12:01:15.763974 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:01:16.656852 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.893 seconds
+[0m12:01:16.659775 [debug] [Thread-2 (]: Using snowflake connection "seed.barclays_workflow_poc.raw_transactions"
+[0m12:01:16.660454 [debug] [Thread-2 (]: On seed.barclays_workflow_poc.raw_transactions: BEGIN
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "node_id": "seed.barclays_workflow_poc.raw_transactions"} */
+[0m12:01:16.786703 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.125 seconds
+[0m12:01:16.788251 [debug] [Thread-2 (]: Using snowflake connection "seed.barclays_workflow_poc.raw_transactions"
+[0m12:01:16.788942 [debug] [Thread-2 (]: On seed.barclays_workflow_poc.raw_transactions: insert into BARCLAYS_DEV.DBT_MODELS.raw_transactions (transaction_id, customer_id, amount, currency, transaction_date, status) values
+            (%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s)
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "node_id": "seed.barclays_workflow_poc.raw_transactions"} *...
+[0m12:01:17.192803 [debug] [Thread-2 (]: SQL status: SUCCESS 10 in 0.403 seconds
+[0m12:01:17.193738 [debug] [Thread-2 (]: Using snowflake connection "seed.barclays_workflow_poc.raw_transactions"
+[0m12:01:17.194374 [debug] [Thread-2 (]: On seed.barclays_workflow_poc.raw_transactions: COMMIT
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "node_id": "seed.barclays_workflow_poc.raw_transactions"} */
+[0m12:01:17.699870 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.505 seconds
+[0m12:01:17.701064 [debug] [Thread-2 (]: Writing runtime SQL for node "seed.barclays_workflow_poc.raw_transactions"
+[0m12:01:17.704961 [info ] [Thread-2 (]: 2 of 2 OK loaded seed file DBT_MODELS.raw_transactions ......................... [[32mINSERT 10[0m in 1.95s]
+[0m12:01:17.705927 [debug] [Thread-2 (]: Finished running node seed.barclays_workflow_poc.raw_transactions
+[0m12:01:17.708828 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m12:01:17.709376 [debug] [Dummy-1   ]: Connection 'list_BARCLAYS_DEV' was properly closed.
+[0m12:01:17.709827 [debug] [Dummy-1   ]: Connection 'seed.barclays_workflow_poc.raw_transactions' was properly closed.
+[0m12:01:17.710394 [info ] [Dummy-1   ]: 
+[0m12:01:17.711006 [info ] [Dummy-1   ]: Finished running 2 seeds in 0 hours 0 minutes and 7.28 seconds (7.28s).
+[0m12:01:17.712199 [debug] [Dummy-1   ]: Command end result
+[0m12:01:17.878229 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m12:01:17.880935 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m12:01:17.889479 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m12:01:17.890072 [info ] [Dummy-1   ]: 
+[0m12:01:17.890796 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m12:01:17.891282 [info ] [Dummy-1   ]: 
+[0m12:01:17.891808 [info ] [Dummy-1   ]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m12:01:17.893577 [debug] [Dummy-1   ]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 8.847677, "process_in_blocks": "0", "process_kernel_time": 1.11, "process_mem_max_rss": "403504", "process_out_blocks": "0", "process_user_time": 6.1}
+[0m12:01:17.894332 [debug] [Dummy-1   ]: Command `cli seed` succeeded at 12:01:17.894035 after 8.85 seconds
+[0m12:01:17.894893 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 12:01:41.143699 | a16e9c4c-1915-43bb-815e-18b4aa837ecf ==============================
+[0m12:01:41.143699 [info ] [Dummy-1   ]: Running with dbt=1.10.15
+[0m12:01:41.144706 [debug] [Dummy-1   ]: running dbt with arguments {'version_check': 'True', 'log_path': '/tmp/dbt/logs', 'cache_selected_only': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'profiles_dir': '/tmp/dbt/', 'warn_error': 'None', 'printer_width': '80', 'invocation_command': 'dbt ', 'fail_fast': 'False', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'use_experimental_parser': 'False', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'False', 'quiet': 'False', 'no_print': 'None', 'empty': 'False', 'debug': 'False', 'introspect': 'True', 'indirect_selection': 'eager'}
+[0m12:01:41.467803 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.10.3
+[0m12:01:41.981457 [debug] [Dummy-1   ]: checksum: 0f45fdd67cc51382d6521f874e757e7afa214ac7bb0178b13f1819cbe813499c, vars: {}, profile: , target: dev, version: 1.10.15
+[0m12:01:42.203650 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:01:42.204354 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:01:42.393600 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m12:01:42.396336 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m12:01:42.453816 [info ] [Dummy-1   ]: Found 3 models, 2 seeds, 7 data tests, 479 macros
+[0m12:01:42.456721 [info ] [Dummy-1   ]: 
+[0m12:01:42.457469 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m12:01:42.457989 [info ] [Dummy-1   ]: 
+[0m12:01:42.458958 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m12:01:42.467462 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_BARCLAYS_DEV'
+[0m12:01:42.612921 [debug] [ThreadPool]: Using snowflake connection "list_BARCLAYS_DEV"
+[0m12:01:42.613618 [debug] [ThreadPool]: On list_BARCLAYS_DEV: show terse schemas in database BARCLAYS_DEV
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "connection_name": "list_BARCLAYS_DEV"} */
+[0m12:01:42.614193 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:01:43.888310 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 1.274 seconds
+[0m12:01:43.894393 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_BARCLAYS_DEV_DBT_MODELS'
+[0m12:01:43.914987 [debug] [ThreadPool]: Using snowflake connection "list_BARCLAYS_DEV_DBT_MODELS"
+[0m12:01:43.915728 [debug] [ThreadPool]: On list_BARCLAYS_DEV_DBT_MODELS: show objects in BARCLAYS_DEV.DBT_MODELS
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "connection_name": "list_BARCLAYS_DEV_DBT_MODELS"} */;
+[0m12:01:43.916294 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:01:44.534510 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.618 seconds
+[0m12:01:44.547185 [debug] [Thread-2 (]: Began running node model.barclays_workflow_poc.stg_customers
+[0m12:01:44.548151 [info ] [Thread-2 (]: 1 of 3 START sql view model DBT_MODELS.stg_customers ........................... [RUN]
+[0m12:01:44.548947 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_BARCLAYS_DEV_DBT_MODELS, now model.barclays_workflow_poc.stg_customers)
+[0m12:01:44.549537 [debug] [Thread-2 (]: Began compiling node model.barclays_workflow_poc.stg_customers
+[0m12:01:44.562622 [debug] [Thread-2 (]: Writing injected SQL for node "model.barclays_workflow_poc.stg_customers"
+[0m12:01:44.563548 [debug] [Thread-2 (]: Began executing node model.barclays_workflow_poc.stg_customers
+[0m12:01:44.624077 [debug] [Thread-2 (]: Writing runtime sql for node "model.barclays_workflow_poc.stg_customers"
+[0m12:01:44.625634 [debug] [Thread-2 (]: Using snowflake connection "model.barclays_workflow_poc.stg_customers"
+[0m12:01:44.626297 [debug] [Thread-2 (]: On model.barclays_workflow_poc.stg_customers: create or replace   view BARCLAYS_DEV.DBT_MODELS.stg_customers
+  
+  
+  
+  
+  as (
+    with source as (
+    select * from BARCLAYS_DEV.DBT_MODELS.raw_customers
+)
+
+select
+    customer_id,
+    customer_name,
+    segment,
+    onboarded_date::date as onboarded_date
+from source
+  )
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "node_id": "model.barclays_workflow_poc.stg_customers"} */;
+[0m12:01:44.626891 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:01:46.406578 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.779 seconds
+[0m12:01:46.440147 [info ] [Thread-2 (]: 1 of 3 OK created sql view model DBT_MODELS.stg_customers ...................... [[32mSUCCESS 1[0m in 1.89s]
+[0m12:01:46.441193 [debug] [Thread-2 (]: Finished running node model.barclays_workflow_poc.stg_customers
+[0m12:01:46.441966 [debug] [Thread-2 (]: Began running node model.barclays_workflow_poc.stg_transactions
+[0m12:01:46.442977 [info ] [Thread-2 (]: 2 of 3 START sql view model DBT_MODELS.stg_transactions ........................ [RUN]
+[0m12:01:46.443793 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.barclays_workflow_poc.stg_customers, now model.barclays_workflow_poc.stg_transactions)
+[0m12:01:46.444394 [debug] [Thread-2 (]: Began compiling node model.barclays_workflow_poc.stg_transactions
+[0m12:01:46.450639 [debug] [Thread-2 (]: Writing injected SQL for node "model.barclays_workflow_poc.stg_transactions"
+[0m12:01:46.451647 [debug] [Thread-2 (]: Began executing node model.barclays_workflow_poc.stg_transactions
+[0m12:01:46.460154 [debug] [Thread-2 (]: Writing runtime sql for node "model.barclays_workflow_poc.stg_transactions"
+[0m12:01:46.461826 [debug] [Thread-2 (]: Using snowflake connection "model.barclays_workflow_poc.stg_transactions"
+[0m12:01:46.462544 [debug] [Thread-2 (]: On model.barclays_workflow_poc.stg_transactions: create or replace   view BARCLAYS_DEV.DBT_MODELS.stg_transactions
+  
+  
+  
+  
+  as (
+    with source as (
+    select * from BARCLAYS_DEV.DBT_MODELS.raw_transactions
+)
+
+select
+    transaction_id,
+    customer_id,
+    amount,
+    currency,
+    transaction_date::date as transaction_date,
+    status,
+    current_timestamp() as loaded_at
+from source
+where status != 'failed'
+  )
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "node_id": "model.barclays_workflow_poc.stg_transactions"} */;
+[0m12:01:46.463140 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:01:48.110662 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.647 seconds
+[0m12:01:48.114542 [info ] [Thread-2 (]: 2 of 3 OK created sql view model DBT_MODELS.stg_transactions ................... [[32mSUCCESS 1[0m in 1.67s]
+[0m12:01:48.115528 [debug] [Thread-2 (]: Finished running node model.barclays_workflow_poc.stg_transactions
+[0m12:01:48.116882 [debug] [Thread-2 (]: Began running node model.barclays_workflow_poc.mart_customer_summary
+[0m12:01:48.118049 [info ] [Thread-2 (]: 3 of 3 START sql view model DBT_MODELS.mart_customer_summary ................... [RUN]
+[0m12:01:48.118844 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.barclays_workflow_poc.stg_transactions, now model.barclays_workflow_poc.mart_customer_summary)
+[0m12:01:48.119427 [debug] [Thread-2 (]: Began compiling node model.barclays_workflow_poc.mart_customer_summary
+[0m12:01:48.125987 [debug] [Thread-2 (]: Writing injected SQL for node "model.barclays_workflow_poc.mart_customer_summary"
+[0m12:01:48.126924 [debug] [Thread-2 (]: Began executing node model.barclays_workflow_poc.mart_customer_summary
+[0m12:01:48.133312 [debug] [Thread-2 (]: Writing runtime sql for node "model.barclays_workflow_poc.mart_customer_summary"
+[0m12:01:48.135522 [debug] [Thread-2 (]: Using snowflake connection "model.barclays_workflow_poc.mart_customer_summary"
+[0m12:01:48.136258 [debug] [Thread-2 (]: On model.barclays_workflow_poc.mart_customer_summary: create or replace   view BARCLAYS_DEV.DBT_MODELS.mart_customer_summary
+  
+  
+  
+  
+  as (
+    with transactions as (
+    select * from BARCLAYS_DEV.DBT_MODELS.stg_transactions
+),
+
+customers as (
+    select * from BARCLAYS_DEV.DBT_MODELS.stg_customers
+)
+
+select
+    c.customer_id,
+    c.customer_name,
+    c.segment,
+    count(t.transaction_id) as total_transactions,
+    sum(t.amount) as total_amount,
+    sum(sum(t.amount) +1) as total_amount_adjusted,
+    avg(t.amount) as avg_transaction_amount,
+    min(t.transaction_date) as first_transaction_date,
+    max(t.transaction_date) as last_transaction_date
+from customers c
+left join transactions t on c.customer_id = t.customer_id
+group by c.customer_id, c.customer_name, c.segment
+  )
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "node_id": "model.barclays_workflow_poc.mart_customer_summary"} */;
+[0m12:01:48.136882 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:01:48.974738 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01c5fcb5-040b-5509-0001-4d4e0678d1f6
+[0m12:01:48.975495 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 002082 (42601): SQL compilation error: 
+Aggregate functions cannot be nested: [SUM(SYS_VW.AMOUNT_0)] nested in [SUM((SUM(SYS_VW.AMOUNT_0)) + (CAST(1 AS FLOAT)))]
+[0m12:01:48.981827 [debug] [Thread-2 (]: Database Error in model mart_customer_summary (models/marts/mart_customer_summary.sql)
+  002082 (42601): SQL compilation error: 
+  Aggregate functions cannot be nested: [SUM(SYS_VW.AMOUNT_0)] nested in [SUM((SUM(SYS_VW.AMOUNT_0)) + (CAST(1 AS FLOAT)))]
+  compiled code at /tmp/dbt/target/run/barclays_workflow_poc/models/marts/mart_customer_summary.sql
+[0m12:01:48.983284 [error] [Thread-2 (]: 3 of 3 ERROR creating sql view model DBT_MODELS.mart_customer_summary .......... [[31mERROR[0m in 0.86s]
+[0m12:01:48.984229 [debug] [Thread-2 (]: Finished running node model.barclays_workflow_poc.mart_customer_summary
+[0m12:01:48.985249 [debug] [Thread-5 (]: Marking all children of 'model.barclays_workflow_poc.mart_customer_summary' to be skipped because of status 'error'.  Reason: Database Error in model mart_customer_summary (models/marts/mart_customer_summary.sql)
+  002082 (42601): SQL compilation error: 
+  Aggregate functions cannot be nested: [SUM(SYS_VW.AMOUNT_0)] nested in [SUM((SUM(SYS_VW.AMOUNT_0)) + (CAST(1 AS FLOAT)))]
+  compiled code at /tmp/dbt/target/run/barclays_workflow_poc/models/marts/mart_customer_summary.sql.
+[0m12:01:48.988865 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m12:01:48.989435 [debug] [Dummy-1   ]: Connection 'list_BARCLAYS_DEV' was properly closed.
+[0m12:01:48.989891 [debug] [Dummy-1   ]: Connection 'model.barclays_workflow_poc.mart_customer_summary' was properly closed.
+[0m12:01:48.990528 [info ] [Dummy-1   ]: 
+[0m12:01:48.991163 [info ] [Dummy-1   ]: Finished running 3 view models in 0 hours 0 minutes and 6.53 seconds (6.53s).
+[0m12:01:48.992541 [debug] [Dummy-1   ]: Command end result
+[0m12:01:49.028497 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m12:01:49.031229 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m12:01:49.039846 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m12:01:49.040408 [info ] [Dummy-1   ]: 
+[0m12:01:49.041024 [info ] [Dummy-1   ]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m12:01:49.041530 [info ] [Dummy-1   ]: 
+[0m12:01:49.042191 [error] [Dummy-1   ]: [31mFailure in model mart_customer_summary (models/marts/mart_customer_summary.sql)[0m
+[0m12:01:49.042872 [error] [Dummy-1   ]:   Database Error in model mart_customer_summary (models/marts/mart_customer_summary.sql)
+  002082 (42601): SQL compilation error: 
+  Aggregate functions cannot be nested: [SUM(SYS_VW.AMOUNT_0)] nested in [SUM((SUM(SYS_VW.AMOUNT_0)) + (CAST(1 AS FLOAT)))]
+  compiled code at /tmp/dbt/target/run/barclays_workflow_poc/models/marts/mart_customer_summary.sql
+[0m12:01:49.043349 [info ] [Dummy-1   ]: 
+[0m12:01:49.043897 [info ] [Dummy-1   ]:   compiled code at /tmp/dbt/target/compiled/barclays_workflow_poc/models/marts/mart_customer_summary.sql
+[0m12:01:49.044362 [info ] [Dummy-1   ]: 
+[0m12:01:49.044879 [info ] [Dummy-1   ]: Done. PASS=2 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=3
+[0m12:01:49.046796 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 7.9792104, "process_in_blocks": "0", "process_kernel_time": 1.24, "process_mem_max_rss": "395612", "process_out_blocks": "0", "process_user_time": 6.0}
+[0m12:01:49.047627 [debug] [Dummy-1   ]: Command `cli run` failed at 12:01:49.047338 after 7.98 seconds
+[0m12:01:49.048204 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 12:04:08.485267 | 2433cfa6-81d8-4271-a37b-39cd2d707c0a ==============================
+[0m12:04:08.485267 [info ] [Dummy-1   ]: Running with dbt=1.10.15
+[0m12:04:08.486208 [debug] [Dummy-1   ]: running dbt with arguments {'partial_parse': 'True', 'introspect': 'True', 'quiet': 'False', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'log_path': '/tmp/dbt/logs', 'static_parser': 'True', 'debug': 'False', 'use_experimental_parser': 'False', 'no_print': 'None', 'log_cache_events': 'False', 'version_check': 'True', 'send_anonymous_usage_stats': 'False', 'printer_width': '80', 'profiles_dir': '/tmp/dbt/', 'indirect_selection': 'eager', 'invocation_command': 'dbt ', 'target_path': '/tmp/dbt/target/', 'use_colors': 'True', 'empty': 'False'}
+[0m12:04:08.799027 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.10.3
+[0m12:04:09.319065 [debug] [Dummy-1   ]: checksum: 0f45fdd67cc51382d6521f874e757e7afa214ac7bb0178b13f1819cbe813499c, vars: {}, profile: , target: dev, version: 1.10.15
+[0m12:04:09.578123 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m12:04:09.579270 [debug] [Dummy-1   ]: Partial parsing: updated file: barclays_workflow_poc://models/marts/mart_customer_summary.sql
+[0m12:04:10.431462 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m12:04:10.434254 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m12:04:10.489481 [info ] [Dummy-1   ]: Found 3 models, 2 seeds, 7 data tests, 479 macros
+[0m12:04:10.492219 [info ] [Dummy-1   ]: 
+[0m12:04:10.492784 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m12:04:10.493255 [info ] [Dummy-1   ]: 
+[0m12:04:10.494067 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m12:04:10.502063 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_BARCLAYS_DEV'
+[0m12:04:10.636464 [debug] [ThreadPool]: Using snowflake connection "list_BARCLAYS_DEV"
+[0m12:04:10.637103 [debug] [ThreadPool]: On list_BARCLAYS_DEV: show terse schemas in database BARCLAYS_DEV
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "connection_name": "list_BARCLAYS_DEV"} */
+[0m12:04:10.637645 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:04:11.138199 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.500 seconds
+[0m12:04:11.143632 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_BARCLAYS_DEV_DBT_MODELS'
+[0m12:04:11.163729 [debug] [ThreadPool]: Using snowflake connection "list_BARCLAYS_DEV_DBT_MODELS"
+[0m12:04:11.164416 [debug] [ThreadPool]: On list_BARCLAYS_DEV_DBT_MODELS: show objects in BARCLAYS_DEV.DBT_MODELS
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "connection_name": "list_BARCLAYS_DEV_DBT_MODELS"} */;
+[0m12:04:11.164952 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:04:11.772086 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.607 seconds
+[0m12:04:11.785459 [debug] [Thread-2 (]: Began running node model.barclays_workflow_poc.stg_customers
+[0m12:04:11.786390 [info ] [Thread-2 (]: 1 of 3 START sql view model DBT_MODELS.stg_customers ........................... [RUN]
+[0m12:04:11.787153 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_BARCLAYS_DEV_DBT_MODELS, now model.barclays_workflow_poc.stg_customers)
+[0m12:04:11.787736 [debug] [Thread-2 (]: Began compiling node model.barclays_workflow_poc.stg_customers
+[0m12:04:11.799239 [debug] [Thread-2 (]: Writing injected SQL for node "model.barclays_workflow_poc.stg_customers"
+[0m12:04:11.800165 [debug] [Thread-2 (]: Began executing node model.barclays_workflow_poc.stg_customers
+[0m12:04:11.859859 [debug] [Thread-2 (]: Writing runtime sql for node "model.barclays_workflow_poc.stg_customers"
+[0m12:04:11.861428 [debug] [Thread-2 (]: Using snowflake connection "model.barclays_workflow_poc.stg_customers"
+[0m12:04:11.862110 [debug] [Thread-2 (]: On model.barclays_workflow_poc.stg_customers: create or replace   view BARCLAYS_DEV.DBT_MODELS.stg_customers
+  
+  
+  
+  
+  as (
+    with source as (
+    select * from BARCLAYS_DEV.DBT_MODELS.raw_customers
+)
+
+select
+    customer_id,
+    customer_name,
+    segment,
+    onboarded_date::date as onboarded_date
+from source
+  )
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "node_id": "model.barclays_workflow_poc.stg_customers"} */;
+[0m12:04:11.862692 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:04:12.663344 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.800 seconds
+[0m12:04:12.698640 [info ] [Thread-2 (]: 1 of 3 OK created sql view model DBT_MODELS.stg_customers ...................... [[32mSUCCESS 1[0m in 0.91s]
+[0m12:04:12.699670 [debug] [Thread-2 (]: Finished running node model.barclays_workflow_poc.stg_customers
+[0m12:04:12.700409 [debug] [Thread-2 (]: Began running node model.barclays_workflow_poc.stg_transactions
+[0m12:04:12.701358 [info ] [Thread-2 (]: 2 of 3 START sql view model DBT_MODELS.stg_transactions ........................ [RUN]
+[0m12:04:12.702133 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.barclays_workflow_poc.stg_customers, now model.barclays_workflow_poc.stg_transactions)
+[0m12:04:12.702700 [debug] [Thread-2 (]: Began compiling node model.barclays_workflow_poc.stg_transactions
+[0m12:04:12.710808 [debug] [Thread-2 (]: Writing injected SQL for node "model.barclays_workflow_poc.stg_transactions"
+[0m12:04:12.711748 [debug] [Thread-2 (]: Began executing node model.barclays_workflow_poc.stg_transactions
+[0m12:04:12.717297 [debug] [Thread-2 (]: Writing runtime sql for node "model.barclays_workflow_poc.stg_transactions"
+[0m12:04:12.718988 [debug] [Thread-2 (]: Using snowflake connection "model.barclays_workflow_poc.stg_transactions"
+[0m12:04:12.719646 [debug] [Thread-2 (]: On model.barclays_workflow_poc.stg_transactions: create or replace   view BARCLAYS_DEV.DBT_MODELS.stg_transactions
+  
+  
+  
+  
+  as (
+    with source as (
+    select * from BARCLAYS_DEV.DBT_MODELS.raw_transactions
+)
+
+select
+    transaction_id,
+    customer_id,
+    amount,
+    currency,
+    transaction_date::date as transaction_date,
+    status,
+    current_timestamp() as loaded_at
+from source
+where status != 'failed'
+  )
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "node_id": "model.barclays_workflow_poc.stg_transactions"} */;
+[0m12:04:12.720310 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:04:13.441894 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.721 seconds
+[0m12:04:13.445793 [info ] [Thread-2 (]: 2 of 3 OK created sql view model DBT_MODELS.stg_transactions ................... [[32mSUCCESS 1[0m in 0.74s]
+[0m12:04:13.446764 [debug] [Thread-2 (]: Finished running node model.barclays_workflow_poc.stg_transactions
+[0m12:04:13.448165 [debug] [Thread-2 (]: Began running node model.barclays_workflow_poc.mart_customer_summary
+[0m12:04:13.449224 [info ] [Thread-2 (]: 3 of 3 START sql view model DBT_MODELS.mart_customer_summary ................... [RUN]
+[0m12:04:13.449975 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.barclays_workflow_poc.stg_transactions, now model.barclays_workflow_poc.mart_customer_summary)
+[0m12:04:13.450550 [debug] [Thread-2 (]: Began compiling node model.barclays_workflow_poc.mart_customer_summary
+[0m12:04:13.456757 [debug] [Thread-2 (]: Writing injected SQL for node "model.barclays_workflow_poc.mart_customer_summary"
+[0m12:04:13.457617 [debug] [Thread-2 (]: Began executing node model.barclays_workflow_poc.mart_customer_summary
+[0m12:04:13.463307 [debug] [Thread-2 (]: Writing runtime sql for node "model.barclays_workflow_poc.mart_customer_summary"
+[0m12:04:13.465363 [debug] [Thread-2 (]: Using snowflake connection "model.barclays_workflow_poc.mart_customer_summary"
+[0m12:04:13.466081 [debug] [Thread-2 (]: On model.barclays_workflow_poc.mart_customer_summary: create or replace   view BARCLAYS_DEV.DBT_MODELS.mart_customer_summary
+  
+  
+  
+  
+  as (
+    with transactions as (
+    select * from BARCLAYS_DEV.DBT_MODELS.stg_transactions
+),
+
+customers as (
+    select * from BARCLAYS_DEV.DBT_MODELS.stg_customers
+)
+
+select
+    c.customer_id,
+    c.customer_name,
+    c.segment,
+    count(t.transaction_id) as total_transactions,
+    sum(t.amount) as total_amount,
+    sum(t.amount +1) as total_amount_adjusted,
+    avg(t.amount) as avg_transaction_amount,
+    min(t.transaction_date) as first_transaction_date,
+    max(t.transaction_date) as last_transaction_date
+from customers c
+left join transactions t on c.customer_id = t.customer_id
+group by c.customer_id, c.customer_name, c.segment
+  )
+/* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "barclays_workflow_poc", "target_name": "dev", "node_id": "model.barclays_workflow_poc.mart_customer_summary"} */;
+[0m12:04:13.466724 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m12:04:14.291105 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.824 seconds
+[0m12:04:14.294726 [info ] [Thread-2 (]: 3 of 3 OK created sql view model DBT_MODELS.mart_customer_summary .............. [[32mSUCCESS 1[0m in 0.84s]
+[0m12:04:14.295643 [debug] [Thread-2 (]: Finished running node model.barclays_workflow_poc.mart_customer_summary
+[0m12:04:14.298321 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m12:04:14.298846 [debug] [Dummy-1   ]: Connection 'list_BARCLAYS_DEV' was properly closed.
+[0m12:04:14.299281 [debug] [Dummy-1   ]: Connection 'model.barclays_workflow_poc.mart_customer_summary' was properly closed.
+[0m12:04:14.299847 [info ] [Dummy-1   ]: 
+[0m12:04:14.300351 [info ] [Dummy-1   ]: Finished running 3 view models in 0 hours 0 minutes and 3.81 seconds (3.81s).
+[0m12:04:14.301654 [debug] [Dummy-1   ]: Command end result
+[0m12:04:14.334070 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m12:04:14.336562 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m12:04:14.344469 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m12:04:14.345005 [info ] [Dummy-1   ]: 
+[0m12:04:14.345681 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m12:04:14.346182 [info ] [Dummy-1   ]: 
+[0m12:04:14.346710 [info ] [Dummy-1   ]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m12:04:14.348576 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 5.9368005, "process_in_blocks": "0", "process_kernel_time": 1.24, "process_mem_max_rss": "440740", "process_out_blocks": "0", "process_user_time": 6.32}
+[0m12:04:14.349304 [debug] [Dummy-1   ]: Command `cli run` succeeded at 12:04:14.349026 after 5.94 seconds
+[0m12:04:14.349878 [debug] [Dummy-1   ]: Flushing usage events

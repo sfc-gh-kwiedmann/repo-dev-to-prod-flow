@@ -1,0 +1,14 @@
+
+    
+    
+    
+    create table BARCLAYS_DEV.DBT_MODELS.raw_transactions (transaction_id text,customer_id text,amount float8,currency text,transaction_date date,status text)
+  ;
+    -- dbt seed --
+    
+            insert into BARCLAYS_DEV.DBT_MODELS.raw_transactions (transaction_id, customer_id, amount, currency, transaction_date, status) values
+            (%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s)
+        
+
+;
+  
