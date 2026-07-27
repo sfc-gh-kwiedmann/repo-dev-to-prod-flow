@@ -1,0 +1,56 @@
+# =============================================================================
+# Deploy dbt to PROD after PR merge
+# =============================================================================
+# Triggers only when code is merged to main.
+# Pushes the project to Snowflake's internal stage via `snow dbt deploy`,
+# then executes it. No Git integration needed in PROD.
+#
+# Dev deployment is handled manually in Snowsight Workspaces (Connect button).
+# =============================================================================
+
+name: Deploy dbt to Prod
+
+on:
+  push:
+    branches: [main]
+
+env:
+  SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+  SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+  SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+
+jobs:
+  deploy-and-execute:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout merged code
+        uses: actions/checkout@v4
+
+      - name: Install Snowflake CLI
+        uses: Snowflake-Labs/snowflake-cli-action@v1
+        with:
+          cli-version: "latest"
+
+      - name: Configure Snowflake connection
+        run: |
+          mkdir -p ~/.snowflake
+          cat > ~/.snowflake/connections.toml <<EOF
+          [default]
+          account = "${SNOWFLAKE_ACCOUNT}"
+          user = "${SNOWFLAKE_USER}"
+          password = "${SNOWFLAKE_PASSWORD}"
+          warehouse = "ADMIN_WH"
+          role = "ACCOUNTADMIN"
+          EOF
+
+      - name: Deploy to PROD
+        run: |
+          snow dbt deploy BARCLAYS_WORKFLOW_POC \
+            --source . \
+            --database BARCLAYS_PROD \
+            --schema DBT_PROJECTS
+
+      - name: Execute in PROD
+        run: |
+          snow sql -q "EXECUTE DBT PROJECT BARCLAYS_PROD.DBT_PROJECTS.BARCLAYS_WORKFLOW_POC ARGS = 'seed';"
+          snow sql -q "EXECUTE DBT PROJECT BARCLAYS_PROD.DBT_PROJECTS.BARCLAYS_WORKFLOW_POC ARGS = 'run';"
