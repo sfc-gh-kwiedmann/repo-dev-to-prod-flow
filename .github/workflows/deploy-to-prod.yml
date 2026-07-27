@@ -42,6 +42,7 @@ jobs:
           warehouse = "ADMIN_WH"
           role = "ACCOUNTADMIN"
           EOF
+          chmod 0600 ~/.snowflake/connections.toml
 
       - name: Deploy to PROD
         run: |
