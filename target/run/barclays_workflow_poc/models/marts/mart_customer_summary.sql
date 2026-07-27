@@ -19,7 +19,7 @@ select
     c.segment,
     count(t.transaction_id) as total_transactions,
     sum(t.amount) as total_amount,
-    sum(t.amount +1) as total_amount_adjusted,
+    sum(t.amount +2) as total_amount_adjusted,
     avg(t.amount) as avg_transaction_amount,
     min(t.transaction_date) as first_transaction_date,
     max(t.transaction_date) as last_transaction_date
