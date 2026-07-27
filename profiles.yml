@@ -1,0 +1,11 @@
+barclays_workflow_poc:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: placeholder
+      user: placeholder
+      role: ACCOUNTADMIN
+      warehouse: ADMIN_WH
+      database: BARCLAYS_DEV
+      schema: DBT_MODELS

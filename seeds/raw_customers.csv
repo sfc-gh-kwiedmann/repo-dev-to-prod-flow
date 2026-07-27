@@ -1,0 +1,5 @@
+customer_id,customer_name,segment,onboarded_date
+CUST_A,Acme Holdings,corporate,2024-03-01
+CUST_B,Beta Finance,institutional,2024-06-15
+CUST_C,Gamma Trading,retail,2024-09-20
+CUST_D,Delta Capital,corporate,2025-01-02
