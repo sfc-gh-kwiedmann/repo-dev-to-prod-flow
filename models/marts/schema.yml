@@ -11,3 +11,11 @@ models:
       - name: total_amount
         tests:
           - not_null
+
+  - name: mart_transaction_summary
+    description: "Transaction summary by category - depends ONLY on stg_transactions (tests independent path)"
+    columns:
+      - name: currency
+        tests:
+          - unique
+          - not_null
